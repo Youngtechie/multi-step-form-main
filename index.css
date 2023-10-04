@@ -221,7 +221,7 @@ h3 {
   main {
     flex-direction: column;
     align-items: center;
-    background-color: hsl(229, 24%, 87%);
+    background-color: hsl(217, 100%, 97%);
   }
   nav {
     display: flex;
@@ -338,7 +338,7 @@ h3 {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    background-color: hsl(229, 24%, 87%);
+    background-color: hsl(217, 100%, 97%);
   }
   nav {
     position: absolute;
