@@ -74,22 +74,41 @@ const planBillY = [
   },
 ];
 
+function final(){
+    document.querySelectorAll(".groupNav button").forEach((nav) => {
+        nav.style.backgroundColor = "transparent";
+        nav.style.color = "hsl(0, 0%, 100%)";
+      });
+    
+      let active = document.querySelector(
+        `.groupNav:nth-of-type(4) button`
+      );
+      active.style.backgroundColor = "hsl(206, 94%, 87%)";
+      active.style.color = "black";
+      document.querySelectorAll(".sec").forEach((sec) => {
+        sec.style.display = "none";
+      });
+    
+      let currentSec = document.querySelector(`.sec5`);
+      currentSec.style.display = "flex";
+      currentForm = 5;
+}
 function updateCurrent(num) {
-
-    if (num === 5) {
-        planbill = 4
-      }
 
   document.querySelectorAll(".groupNav button").forEach((nav) => {
     nav.style.backgroundColor = "transparent";
     nav.style.color = "hsl(0, 0%, 100%)";
   });
-  let active = document.querySelector(`.groupNav:nth-of-type(${planbill}) button`);
+
+  let active = document.querySelector(
+    `.groupNav:nth-of-type(${num}) button`
+  );
   active.style.backgroundColor = "hsl(206, 94%, 87%)";
   active.style.color = "black";
   document.querySelectorAll(".sec").forEach((sec) => {
     sec.style.display = "none";
   });
+
   let currentSec = document.querySelector(`.sec${num}`);
   currentSec.style.display = "flex";
   currentForm = num;
@@ -104,7 +123,6 @@ function updateCurrent(num) {
   if (currentForm === 4) {
     summary();
   }
-  
 }
 
 function submit(e) {
