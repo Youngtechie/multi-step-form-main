@@ -1,0 +1,463 @@
+@font-face {
+  font-family: Ubuntu;
+  src: url(./assets/fonts/Ubuntu-Regular.ttf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+button,
+input {
+  cursor: pointer;
+  font-family: Ubuntu;
+}
+
+main {
+  font-family: Ubuntu;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.5;
+}
+.groupNav button {
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  border: 1px solid hsl(229, 24%, 87%);
+  background-color: transparent;
+  color: hsl(0, 0%, 100%);
+  font-weight: 700;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+  border: 1px solid hsl(243, 100%, 62%);
+}
+.selectOpt {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  background-color: hsl(231, 100%, 99%);
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.select {
+  width: 40px;
+  height: 20px;
+  display: flex;
+  background-color: hsl(213, 96%, 18%);
+  align-items: center;
+  border-radius: 10px;
+  margin: 0 20px;
+  padding: 0 5px;
+  cursor: pointer;
+  justify-content: flex-start;
+}
+.moveSelect {
+  width: 10px;
+  height: 10px;
+  background-color: hsl(231, 100%, 99%);
+  border-radius: 100%;
+}
+.options button:first-of-type,
+.options button:hover {
+  border: 1px solid hsl(243, 100%, 62%);
+  background-color: hsl(231, 100%, 99%);
+}
+.options button div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+  align-items: flex-start;
+}
+.options button div span:nth-of-type(1),
+.checks button div span:nth-of-type(1) {
+  font-size: small;
+  color: hsl(231, 11%, 63%);
+}
+.options button div span:nth-of-type(2) {
+  font-size: smaller;
+  color: hsl(213, 96%, 18%);
+  font-weight: 700;
+  margin-top: 5px;
+}
+h3 {
+  margin-bottom: 5px;
+}
+.opt1 {
+  color: hsl(213, 96%, 18%);
+}
+.opt {
+  font-weight: 700;
+}
+.opt2 {
+  color: hsl(231, 11%, 63%);
+}
+.btnCon2 button {
+  padding: 10px 15px;
+  font-weight: 700;
+  background-color: hsl(213, 96%, 18%);
+  border: 0;
+  border-radius: 5px;
+  color: hsl(229, 24%, 87%);
+  margin-top: -10px;
+}
+.btnCon2 button:first-of-type {
+  padding: 10px 15px;
+  font-weight: 700;
+  background-color: transparent;
+  border: 0;
+  color: hsl(231, 11%, 63%);
+  margin-top: -10px;
+}
+.checks button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(229, 24%, 87%);
+}
+.checkBox {
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 5px;
+  background-color: hsl(0, 0%, 100%);
+  border: 1px solid hsl(229, 24%, 87%);
+  margin-right: 10px;
+}
+.middle {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.amount {
+  position: absolute;
+  right: 10px;
+}
+.checks button div span:nth-of-type(1) {
+  font-size: smaller;
+  margin-top: 5px;
+  font-weight: 600;
+}
+.mid{
+    background-color: hsl(231, 100%, 99%);
+    padding: 10px;
+    font-size: small;
+}
+.midF{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.summaryPlan{
+    display: flex;
+    flex-direction: column;
+}
+.summaryPlan span:last-of-type{
+    text-decoration: underline;
+    color: hsl(231, 11%, 63%);
+    cursor: pointer;
+}
+.summaryAddons{
+    border-top: 1px solid hsl(229, 24%, 87%);
+    padding-top: 20px;
+}
+.summaryAddons div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+.summaryAddons div span:first-of-type, .totalSummary span:first-of-type{
+    color: hsl(231, 11%, 63%);
+}
+.totalSummary{
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: small;
+    margin-top: 10px;
+}
+.totalSummary .totalAmount{
+    color: hsl(243, 100%, 62%);
+    font-weight: 800;
+}
+.sec4{
+    font-weight: 700;
+}
+.col{
+    color:  hsl(213, 96%, 18%);
+}
+.sec5{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.sec5 h2{
+    margin-top: 20px;
+}
+@media (max-width: 1023px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+    background-color: hsl(229, 24%, 87%);
+  }
+  nav {
+    display: flex;
+    flex-direction: row;
+    padding-top: 30px;
+    width: 100%;
+    justify-content: center;
+    background-image: url(./assets/images/bg-sidebar-mobile.svg);
+    height: 25%;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .groupNav {
+    margin-right: 15px;
+  }
+
+  .sec {
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(0, 0%, 100%);
+    width: 300px;
+    height: 350px;
+    border-radius: 10px;
+    padding: 25px 15px;
+    margin-top: -73px;
+  }
+  .sec h2,
+  h3,
+  h4 {
+    color: hsl(213, 96%, 18%);
+    font-weight: 800;
+  }
+  .sec p {
+    margin: 10px 0;
+    color: hsl(231, 11%, 63%);
+  }
+  .sec1 form {
+    display: flex;
+    flex-direction: column;
+  }
+  .inputgroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  .inputgroup label {
+    font-size: smaller;
+    color: hsl(213, 96%, 18%);
+    font-weight: 700;
+  }
+  .inputgroup input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid hsl(229, 24%, 87%);
+    font-weight: 700;
+    outline: 1px solid transparent;
+  }
+  .btnCon,
+  .btnCon2 {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    height: 70px;
+    width: 100%;
+    background-color: hsl(0, 0%, 100%);
+    align-self: center;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 10px;
+  }
+  .btnCon2 {
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  .btnCon button {
+    padding: 10px 15px;
+    font-weight: 700;
+    background-color: hsl(213, 96%, 18%);
+    border: 0;
+    border-radius: 5px;
+    color: hsl(229, 24%, 87%);
+    margin-top: -10px;
+  }
+  .subGroup {
+    display: none;
+  }
+  .sec2 {
+    height: 450px;
+  }
+  .sec3 {
+    height: 400px;
+  }
+  .sec4{
+    height: 400px;
+  }
+  .options {
+    display: flex;
+    flex-direction: column;
+  }
+  .options button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 1px solid hsl(229, 24%, 87%);
+    background-color: transparent;
+  }
+}
+@media (min-width: 1024px) {
+  main {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: hsl(229, 24%, 87%);
+  }
+  nav {
+    position: absolute;
+    left: 15%;
+    margin: 20px;
+    width: 250px;
+    height: 600px;
+    background-image: url(./assets/images/bg-sidebar-desktop.svg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 40px 0 0 20px;
+  }
+  .sec {
+    background-color: hsl(0, 0%, 100%);
+    height: 630px;
+    width: 70%;
+    padding-left: 30%;
+    padding-top: 5%;
+    padding-right: 5%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(0, 0%, 100%);
+  }
+  .sec h2 {
+    color: hsl(213, 96%, 18%);
+    font-weight: 800;
+  }
+  .sec p {
+    margin: 10px 0;
+    color: hsl(231, 11%, 63%);
+  }
+  .sec1 form {
+    display: flex;
+    flex-direction: column;
+  }
+  .sec2 p {
+    margin-bottom: 30px;
+  }
+  .inputgroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  .inputgroup label {
+    font-size: smaller;
+    color: hsl(213, 96%, 18%);
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+  .inputgroup input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid hsl(229, 24%, 87%);
+    font-weight: 700;
+    outline: 1px solid transparent;
+  }
+
+  .btnCon button {
+    padding: 10px 15px;
+    font-weight: 700;
+    background-color: hsl(213, 96%, 18%);
+    border: 0;
+    border-radius: 5px;
+    color: hsl(229, 24%, 87%);
+  }
+  .btnCon,
+  .btnCon2 {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-top: 150px;
+  }
+  .btnCon2 {
+    justify-content: space-between;
+    padding: 0 10px;
+  }
+  .groupNav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+  }
+  .groupNav span:first-of-type {
+    color: hsl(231, 11%, 63%);
+  }
+  .groupNav span:nth-of-type(2) {
+    color: hsl(0, 0%, 100%);
+  }
+  .groupNav button {
+    margin-right: 20px;
+  }
+  .subGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  .options {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .options button {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 30%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid hsl(229, 24%, 87%);
+    background-color: transparent;
+  }
+  .options button div {
+    margin-top: 50px;
+    margin-left: 0;
+  }
+  .selectOpt {
+    margin-top: 40px;
+  }
+}

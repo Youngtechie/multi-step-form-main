@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="./index.css" />
+
+    <title>Frontend Mentor | Multi-step form</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        position: absolute;
+        bottom: 5px;
+        font-size: 12px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <!-- Sidebar start -->
+      <nav>
+        <div class="groupNav">
+          <button>1</button>
+          <div class="subGroup">
+            <span>Step 1</span>
+            <span>YOUR INFO</span>
+          </div>
+        </div>
+        <div class="groupNav">
+          <button>2</button>
+          <div class="subGroup">
+            <span>Step 2</span>
+            <span>SELECT PLAN</span>
+          </div>
+        </div>
+        <div class="groupNav">
+          <button>3</button>
+          <div class="subGroup">
+            <span>Step 3</span>
+            <span>ADD-ONS</span>
+          </div>
+        </div>
+        <div class="groupNav">
+          <button>4</button>
+          <div class="subGroup">
+            <span>Step 4</span>
+            <span>SUMMARY</span>
+          </div>
+        </div>
+      </nav>
+      <!-- Sidebar end -->
+
+      <!-- Step 1 start -->
+
+      <section class="sec1 sec">
+        <h2>Personal info</h2>
+
+        <p>Please provide your name, email address, and phone number.</p>
+
+        <form>
+          <div class="inputgroup">
+            <label for="name">Name</label>
+            <input
+              type="text"
+              name="Name"
+              id="name"
+              placeholder="e.g Stephen King"
+              required
+            />
+          </div>
+          <div class="inputgroup">
+            <label for="email">Email Address</label>
+            <input
+              type="email"
+              name="Email"
+              id="email"
+              placeholder="e.g stephenking@lorem.com"
+              required
+            />
+          </div>
+          <div class="inputgroup">
+            <label for="tel">Phone Number</label>
+            <input
+              type="tel"
+              name="Tel"
+              id="tel"
+              placeholder="e.g. +1 234 567 890"
+              required
+            />
+          </div>
+
+          <div class="btnCon">
+            <button type="submit">Next Step</button>
+          </div>
+        </form>
+      </section>
+
+      <!-- Step 1 end -->
+
+      <!-- Step 2 start -->
+
+      <section class="sec2 sec" style="display: none">
+        <h2>Select your plan</h2>
+
+        <p>You have the option of monthly or yearly billing.</p>
+
+        <div class="options Monthly">
+          <button onclick="updateCurrentPlan('1', 'Monthly')">
+            <img src="./assets/images/icon-arcade.svg" alt="icon-arcade" />
+            <div>
+              <h3>Arcade</h3>
+              <span>$9/mo</span>
+            </div>
+          </button>
+          <button onclick="updateCurrentPlan(2, 'Monthly')">
+            <img src="./assets/images/icon-advanced.svg" alt="icon-advanced" />
+            <div>
+              <h3>Advanced</h3>
+              <span>$12/mo</span>
+            </div></button
+          ><button onclick="updateCurrentPlan(3, 'Monthly')">
+            <img src="./assets/images/icon-pro.svg" alt="icon-pro" />
+            <div>
+              <h3>Pro</h3>
+              <span>$15/mo</span>
+            </div>
+          </button>
+        </div>
+
+        <div class="options Yearly" style="display: none">
+          <button onclick="updateCurrentPlan(1 , 'Yearly')">
+            <img src="./assets/images/icon-arcade.svg" alt="icon-arcade" />
+            <div>
+              <h3>Arcade</h3>
+              <span>$90/yr</span>
+              <span>2 months free</span>
+            </div>
+          </button>
+          <button onclick="updateCurrentPlan(2 , 'Yearly')">
+            <img src="./assets/images/icon-advanced.svg" alt="icon-advanced" />
+            <div>
+              <h3>Advanced</h3>
+              <span>$120/yr</span>
+              <span>2 months free</span>
+            </div></button
+          ><button onclick="updateCurrentPlan(3 , 'Yearly')">
+            <img src="./assets/images/icon-pro.svg" alt="icon-pro" />
+            <div>
+              <h3>Pro</h3>
+              <span>$150/yr</span>
+              <span>2 months free</span>
+            </div>
+          </button>
+        </div>
+
+        <div class="selectOpt">
+          <span class="opt1 opt">Monthly</span>
+          <div class="select" onclick="updateCurrentPlanSession()">
+            <div class="moveSelect"></div>
+          </div>
+          <span class="opt2 opt">Yearly</span>
+        </div>
+
+        <div class="btnCon2">
+          <button type="button" onclick="updateCurrent(1)">Go Back</button>
+          <button type="button" onclick="updateCurrent(3)">Next Step</button>
+        </div>
+      </section>
+
+      <!-- Step 2 end -->
+
+      <!-- Step 3 start -->
+
+      <section class="sec3 sec" style="display: none">
+        <h2>Pick add-ons</h2>
+
+        <p>Add-ons help enhance your gaming experience.</p>
+
+        <div class="checks Monthly">
+          <button onclick="PickAddOns(1, 'M')">
+            <div class="checkBox"></div>
+            <div class="middle">
+              <h4>Online service</h4>
+              <span>Access to multiplayer games</span>
+            </div>
+            <span class="amount">+$1/mo</span>
+          </button>
+          <button onclick="PickAddOns(2, 'M')">
+            <div class="checkBox"></div>
+            <div class="middle">
+              <h4>Larger storage</h4>
+              <span>Extra 1TB of cloud save</span>
+            </div>
+            <span class="amount">+$2/mo</span>
+          </button>
+          <button onclick="PickAddOns(3, 'M')">
+            <div class="checkBox"></div>
+            <div class="middle">
+              <h4>Customizable Profile</h4>
+              <span>Custom theme on your profile</span>
+            </div>
+            <span class="amount">+$2/mo</span>
+          </button>
+        </div>
+
+        <div class="checks Yearly" style="display: none">
+          <button onclick="PickAddOns(4, 'Y')">
+            <div class="checkBox"></div>
+            <div class="middle">
+              <h3>Online service</h3>
+              <span>Access to multiplayer games</span>
+            </div>
+            <span class="amount">+$10/yr</span>
+          </button>
+          <button onclick="PickAddOns(5, 'Y')">
+            <div class="checkBox"></div>
+            <div class="middle">
+              <h3>Larger storage</h3>
+              <span>Extra 1TB of cloud save</span>
+            </div>
+            <span class="amount">+$20/yr</span>
+          </button>
+          <button onclick="PickAddOns(6, 'Y')">
+            <div class="checkBox"></div>
+            <div class="middle">
+              <h3>Customizable Profile</h3>
+              <span>Custom theme on your profile</span>
+            </div>
+            <span class="amount">+$20/yr</span>
+          </button>
+        </div>
+
+        <div class="btnCon2">
+          <button type="button" onclick="updateCurrent(2)">Go Back</button>
+          <button type="button" onclick="updateCurrent(4)">Next Step</button>
+        </div>
+      </section>
+
+      <!-- Step 3 end -->
+
+      <!-- Step 4 start -->
+
+      <section class="sec sec4" style="display: none">
+        <h2>Finishing up</h2>
+
+        <p>Double-check everything looks OK before confirming.</p>
+
+        <div class="mid">
+          <div class="midF">
+            <div class="summaryPlan">
+              <span class="col"></span>
+              <span onclick="updateCurrent(2)">Change</span>
+            </div>
+            <span class="summaryAmount col"></span>
+          </div>
+        </div>
+
+        <div class="totalSummary">
+          <span>Total (per <span class="totalPlan"></span>)</span>
+          <span class="totalAmount"></span>
+        </div>
+
+        <div class="btnCon2">
+          <button type="button" onclick="updateCurrent(3)">Go Back</button>
+          <button type="button" onclick="updateCurrent(5)">Confirm</button>
+        </div>
+      </section>
+
+      <!--  -->
+
+      <!-- Dynamically add subscription and add-on selections here -->
+
+      <!-- Total (per month/year) Go Back Confirm -->
+
+      <!-- Step 4 end -->
+
+      <section class="sec sec5" style="display: none">
+        <img src="./assets/images/icon-thank-you.svg" alt="icon-thank-you" width="50px" />
+        <h2>Thank you!</h2>
+        <p>
+          Thanks for confirming your subscription! We hope you have fun using
+          our platform. If you ever need support, please feel free to email us
+          at support@loremgaming.com.
+        </p>
+      </section>
+
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="#">Youngtechie</a>.
+      </div>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
